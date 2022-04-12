@@ -34,9 +34,8 @@ struct ImagePicker: UIViewControllerRepresentable {
                 }
             }
         }
-        
-        
     }
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self    )
     }
@@ -49,6 +48,7 @@ struct ImagePicker: UIViewControllerRepresentable {
         picker.delegate = context.coordinator
         return picker
     }
+    
     func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {
     }
 }
