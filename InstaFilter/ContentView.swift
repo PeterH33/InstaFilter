@@ -13,7 +13,7 @@
 //I could not get any kCI Keys for bokehBlur to show up, so I did not implement that one, it just behaves differently and could use some more inspection to get it working.
 
 //Future improvements
-//get all the filters in and working (specificially the values to use in applyProcessing() to make the sliders work in a rasonable manner and clean up the selection box for the filters.
+//get all the filters in and working (specifically the values to use in applyProcessing() to make the sliders work in a reasonable manner and clean up the selection box for the filters.
 //Application of multiple filters would be good too, the order filters are applied in matters.
 //Might be fun to have a "Random filter" option that just hits a random number of filters and shows the result
 
@@ -77,7 +77,7 @@ struct ContentView: View {
     
     func setFilter(_ filter: CIFilter) {
         currentFilter = filter
-        //Chalenge 2 this would be a good place to add the logic of what sliders to render
+        //Challenge 2 this would be a good place to add the logic of what sliders to render
         let inputKeys = currentFilter.inputKeys
        
         showInputIntensitySlider = inputKeys.contains(kCIInputIntensityKey) ? true : false
@@ -91,7 +91,7 @@ struct ContentView: View {
     func applyProcessing() {
         let inputKeys = currentFilter.inputKeys
         
-        //Challenge 2 Make sure that the new logic for the sliders does not interfere with non existant keys
+        //Challenge 2 Make sure that the new logic for the sliders does not interfere with non existent keys
         if inputKeys.contains(kCIInputIntensityKey) {
             currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey)
         }
@@ -133,7 +133,7 @@ struct ContentView: View {
                     showingImagePicker = true
                     // select an image
                 }
-                //Challenge 2 add in logic for the sliders to be present only when they are availible to the current filter. We could have the sliders appear and disapear, or we could simply flag them as disabled when not in use.
+                //Challenge 2 add in logic for the sliders to be present only when they are available to the current filter. We could have the sliders appear and disappear, or we could simply flag them as disabled when not in use.
                 sliderView
                     .padding(.vertical)
 
@@ -188,7 +188,7 @@ struct ContentView: View {
         }
     }
     
-    //I feel like this slider view could be cleaned up and made less repeditive.
+    //I feel like this slider view could be cleaned up and made less repetitive.
     private var sliderView: some View{
         VStack{
             if showInputIntensitySlider{
@@ -230,11 +230,11 @@ struct ContentView: View {
                 
             }
             
-        }//endVstack
+        }//end Vstack
     }//End SliderView
     
     
-}//End Contentview
+}//End ContentView
 
 
 
